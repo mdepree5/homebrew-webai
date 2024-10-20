@@ -1,10 +1,15 @@
 class WebAI < Formula
   desc "A special CLI tool for WebAI"
   homepage "https://github.com/mdepree5/webai"
-  url "https://github.com/mdepree5/webai/releases/download/v1.0.0/webai-1.0.0.tar.gz"
-  sha256 "checksum_of_the_release_file"
+  url "https://github.com/mdepree5/webai/releases/download/webai/index-macos"
+  sha256 "19e945368e9bc541fc9ab3bc05a65f98b844f46100773317b12d9fcee72d318c  index-macos"
+  version "0.1.0"
 
   def install
-    bin.install "webai"
+    bin.install "index-macos" => "webai"
+  end
+
+  test do
+    system "#{bin}/webai", "--version"
   end
 end
